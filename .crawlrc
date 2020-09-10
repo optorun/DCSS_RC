@@ -1,0 +1,204 @@
+include = CosplayChallenge.rc
+
+#include += HDAItemColors.rc
+#include += HDAMessageColors.rc
+
+#auto_butcher = true
+default_manual_training = true
+autofight_stop = 75
+autofight_caught = true
+#autofight_throw = true
+hp_warning = 50
+explore_delay = -1
+travel_delay = -1
+rest_delay = -1
+explore_stop += greedy_items
+equip_unequip = true
+show_more = false
+note_chat_messages = true
+#explore_wall_bias = 50
+
+tile_show_threat_levels = trivial easy tough nasty
+
+tile_upstairs_col = green
+tile_branchstairs_col = red
+tile_door_col = #c27149
+tile_wall_col = #4c4141
+tile_explore_horizon_col = #919191
+tile_floor_col = #0f0d0d
+tile_item_col = #0f0d0d
+tile_feature_col = #d4be21
+tile_plant_col = #3e5a2f
+tile_water_col = #0b5d79
+tile_deep_water_col = #1212b3
+tile_trap_col = #f447ff
+tile_transporter_col = #ff5656
+tile_transporter_landing_col = #59ff89
+tile_lava_col = #5f0a00
+
+#automagic_enable = true
+#automagic_fight = true
+#automagic_stop = 20
+
+view_delay = 300
+hp_colour = 100:green, 99:lightgray, 75:yellow, 50:lightred, 25:red
+mp_colour = 100:green, 99:lightgray, 75:yellow, 50:lightred, 25:red
+sort_menus = true:equipped,identified,basename,art,ego,glowing,qualname,curse,charged,slot
+#$equipped := orange
+#menu_colour += inventory:$equipped:.*equipped.*
+
+tile_map_scale = 1
+
+spell_slot ^= Apportation:+a
+spell_slot ^= Sublimation of Blood:+e
+spell_slot ^= Blink:+u
+spell_slot ^= Passwall:+i
+spell_slot ^= Swiftness:+o
+spell_slot ^= Passage of Golubria:+p
+spell_slot ^= Statue Form:+b
+spell_slot ^= Necromutation:+n
+spell_slot ^= Irradiate:+x
+spell_slot ^= Invisibility:+y
+spell_slot ^= Fire Storm:cfgvh
+spell_slot ^= Ozocubu's Refrigeration:cfgvh
+spell_slot ^= Tornado:cfgvh
+spell_slot ^= Absolute Zero:cfgvh
+spell_slot ^= Iskenderun's Mystic Blast:cfgvh
+spell_slot ^= Iron Shot:cfghv
+spell_slot ^= Lehudib's Crystal Spear:cfghv
+spell_slot ^= Orb of Destruction:cfghv
+spell_slot ^= Fireball:cfgvh
+spell_slot ^= Ignition:cfghv
+spell_slot ^= Ensorcelled Hibernation:+b
+spell_slot ^= Searing Ray:+b
+spell_slot ^= Static Discharge:+b
+spell_slot ^= Frozen Ramparts:+b
+spell_slot ^= Sticky Flame:+b
+spell_slot ^= Airstrike:+c
+spell_slot ^= Stone Arrow:+c
+spell_slot ^= Confusing Touch:+c
+spell_slot ^= Hailstorm:+c
+spell_slot ^= Mephitic Cloud:+d
+spell_slot ^= Dazzling Flash:+d
+spell_slot ^= Lee's Rapid Deconstruction:+d
+spell_slot ^= Fulminant Prism:+d
+spell_slot ^= Summon Ice Beast:dgh
+spell_slot ^= Summon Lightning Spire:dgh
+spell_slot ^= Summon Mana Viper:dgh
+spell_slot ^= Malign Gateway:dgh
+
+more := force_more_message
+more += You have finished your manual of
+more += The mighty Pandemonium lord .* resides here
+more += You fail to use your ability
+more += too confused
+more += Your surroundings flicker
+more += A sentinel's mark forms upon you
+more += enter a teleport trap
+more += Ouch! That really hurt!
+more += You are blasted by holy energy!
+more += You are (blasted|electrocuted)!
+more += You are confused
+more += You feel a surge of divine spite
+more += lose consciousness
+more += Space warps.*around you
+more += Space bends around you
+more += watched by something
+more += flickers and vanishes!
+more += hell_effect:
+more += You feel yourself slow down
+more += You are starting to lose your buoyancy
+more += Your hearing returns
+more += Your transformation is almost over
+more += You have a feeling this form
+more += You feel yourself come back to life
+more += time is quickly running out
+more += life is in your own hands
+more += Your shroud falls apart
+more += You start to feel a little slower
+more += You feel less protected from missiles
+more += You have reached level
+more += You rejoin the land of the living
+more += Your scales start
+more += You feel monstrous
+more += Jiyva alters your body
+more += Strange energies course through your body
+more += ((floating|shining) eye|dream sheep|death drake).*into view
+more += (wretched star|apocalypse crab).*into view
+more += (entropy weaver|torpor snail|spriggan druid).*into view
+more += (vault (warden|sentinel)|merfolk (avatar|siren)).*into view
+more += (guardian serpent|draconian shifter|convoker|death cob).*into view
+more += (orc sorcerer|priest|ogre mage|great orb of eyes|sphinx).*into view
+more += (basilisk|deep elf (sorcerer|demonologist)).*into view
+more += (flayed ghost|greater mummy|mummy priest|fiend|tzitzimitl).*into view
+more += (tormentor|curse toe|curse skull|hell sentinel|hellion).*into view
+more += (deep elf (sorcerer|high priest)|draconian scorcher).*into view
+more += ((deep elf|draconian) annihilator|tengu reaver).*into view
+more += (lich|orb of fire|executioner|juggernaut|shrike).*into view
+more += (?-i:[A-Z]).* comes? into view
+
+stop := runrest_stop_message
+stop += You feel yourself slow down
+stop += You are starting to lose your buoyancy
+stop += Your hearing returns
+stop += Your transformation is almost over
+stop += back to life
+stop += time is quickly running out
+stop += life is in your own hands
+stop += is no longer charmed
+
+runrest_ignore_poison = 3:30
+runrest_ignore_monster += butterfly:1
+rest_wait_both = true
+
+auto_exclude += ancient lich, death drake, hydra, ice statue, orb of fire
+
+confirm_action += Potion Petition, Call Merchant, Bribe Branch, Heavenly Storm
+
+ae := autopickup_exceptions
+ae += <throwing net
+ae += <dart
+ae += <javelin
+ae += <artefact
+ae ^= <immolation
+ae ^= <phantom mirror
+ae ^= <box
+ae ^= <lightning
+ae ^= <condenser
+ae ^= <tremor
+ae ^= <potions? of mutation
+ae ^= <potions? of lignification
+#ae += >wand of random effects
+
+# Skill menu at game start by rwbarton
+{
+local need_skills_opened = true
+function ready()
+  if you.turns() == 0 and need_skills_opened then
+    need_skills_opened = false
+    crawl.sendkeys("m")
+  end
+end
+}
+
+## Pickup aux armour you haven't found yet.
+## Also picks up ego/artefact aux armour if you can wear it.
+## Doesn't pick up shields or body armour.
+{
+local function autopickup(it, name)
+    local class  = it.class(true)
+    if it.is_useless then return false end
+    if class == "armour" then
+        local good_slots = {cloak="Cloak", helmet="Helmet",
+                            gloves="Gloves", boots="Boots"}
+        st, _ = it.subtype()
+        if good_slots[st] ~= nil and items.equipped_at(good_slots[st]) == nil then
+            return true
+        elseif st ~= "body" and st ~= "shield" and (it.artefact or it.branded) then
+            return true
+        end 
+    end
+    return nil
+end
+add_autopickup_func(autopickup)
+}
