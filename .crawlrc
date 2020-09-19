@@ -1,7 +1,4 @@
-include = CosplayChallenge.rc
-
-#include += HDAItemColors.rc
-#include += HDAMessageColors.rc
+include = CrawlCosplay.rc
 
 #auto_butcher = true
 default_manual_training = true
@@ -68,6 +65,7 @@ spell_slot ^= Iron Shot:cfghv
 spell_slot ^= Lehudib's Crystal Spear:cfghv
 spell_slot ^= Orb of Destruction:cfghv
 spell_slot ^= Fireball:cfgvh
+spell_slot ^= Borgnjor's Vile Clutch:cfghv
 spell_slot ^= Ignition:cfghv
 spell_slot ^= Ensorcelled Hibernation:+b
 spell_slot ^= Searing Ray:+b
@@ -96,13 +94,11 @@ more += Your surroundings flicker
 more += A sentinel's mark forms upon you
 more += enter a teleport trap
 more += Ouch! That really hurt!
-more += You are blasted by holy energy!
-more += You are (blasted|electrocuted)!
+more += You are (blasted|electrocuted)
 more += You are confused
 more += You feel a surge of divine spite
 more += lose consciousness
-more += Space warps.*around you
-more += Space bends around you
+more += Space (warps|bends) around you
 more += watched by something
 more += flickers and vanishes!
 more += hell_effect:
@@ -125,15 +121,13 @@ more += Jiyva alters your body
 more += Strange energies course through your body
 more += ((floating|shining) eye|dream sheep|death drake).*into view
 more += (wretched star|apocalypse crab).*into view
-more += (entropy weaver|torpor snail|spriggan druid).*into view
+more += (entropy weaver|torpor snail).*into view
 more += (vault (warden|sentinel)|merfolk (avatar|siren)).*into view
-more += (guardian serpent|draconian shifter|convoker|death cob).*into view
+more += (guardian serpent|draconian shifter|convoker|scorcher|annihilator).*into view
 more += (orc sorcerer|priest|ogre mage|great orb of eyes|sphinx).*into view
-more += (basilisk|deep elf (sorcerer|demonologist)).*into view
+more += (basilisk|deep elf (sorcerer|demonologist|high priest|annihilator)).*into view
 more += (flayed ghost|greater mummy|mummy priest|fiend|tzitzimitl).*into view
 more += (tormentor|curse toe|curse skull|hell sentinel|hellion).*into view
-more += (deep elf (sorcerer|high priest)|draconian scorcher).*into view
-more += ((deep elf|draconian) annihilator|tengu reaver).*into view
 more += (lich|orb of fire|executioner|juggernaut|shrike).*into view
 more += (?-i:[A-Z]).* comes? into view
 
@@ -151,7 +145,7 @@ runrest_ignore_poison = 3:30
 runrest_ignore_monster += butterfly:1
 rest_wait_both = true
 
-auto_exclude += ancient lich, death drake, hydra, ice statue, orb of fire
+auto_exclude += ancient lich, death drake, hydra, ice statue, orb of fire, caustic shrike
 
 confirm_action += Potion Petition, Call Merchant, Bribe Branch, Heavenly Storm
 
@@ -177,6 +171,7 @@ function ready()
   if you.turns() == 0 and need_skills_opened then
     need_skills_opened = false
     crawl.sendkeys("m")
+    crawl.sendkeys("!")
   end
 end
 }
