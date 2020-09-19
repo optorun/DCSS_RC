@@ -60,6 +60,7 @@ spell_slot ^= Fire Storm:cfgvh
 spell_slot ^= Ozocubu's Refrigeration:cfgvh
 spell_slot ^= Tornado:cfgvh
 spell_slot ^= Absolute Zero:cfgvh
+spell_slot ^= Shatter:cfgvh
 spell_slot ^= Iskenderun's Mystic Blast:cfgvh
 spell_slot ^= Iron Shot:cfghv
 spell_slot ^= Lehudib's Crystal Spear:cfghv
