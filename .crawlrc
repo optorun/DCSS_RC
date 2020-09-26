@@ -85,6 +85,8 @@ spell_slot ^= Summon Ice Beast:dgh
 spell_slot ^= Summon Lightning Spire:dgh
 spell_slot ^= Summon Mana Viper:dgh
 spell_slot ^= Malign Gateway:dgh
+spell_slot ^= Borgnjor's Revivification:jk
+spell_slot ^= Death's Door:jk
 
 more := force_more_message
 more += You have finished your manual of
