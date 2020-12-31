@@ -81,6 +81,7 @@ spell_slot ^= Mephitic Cloud:+d
 spell_slot ^= Dazzling Flash:+d
 spell_slot ^= Lee's Rapid Deconstruction:+d
 spell_slot ^= Fulminant Prism:+d
+spell_slot ^= Ozocubu's Armour:+e
 spell_slot ^= Summon Ice Beast:dgh
 spell_slot ^= Summon Lightning Spire:dgh
 spell_slot ^= Summon Mana Viper:dgh
