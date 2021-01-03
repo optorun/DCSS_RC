@@ -134,6 +134,7 @@ more += (flayed ghost|greater mummy|mummy priest|fiend|tzitzimitl).*into view
 more += (tormentor|curse toe|curse skull|hell sentinel|hellion).*into view
 more += (lich|orb of fire|executioner|juggernaut|shrike).*into view
 more += (?-i:[A-Z]).* comes? into view
+more += Xom
 
 stop := runrest_stop_message
 stop += You feel yourself slow down
