@@ -1,6 +1,5 @@
 include = CrawlCosplay.rc
 
-#auto_butcher = true
 default_manual_training = true
 autofight_stop = 75
 autofight_caught = true
@@ -14,7 +13,7 @@ equip_unequip = true
 show_more = false
 note_chat_messages = true
 #explore_wall_bias = 50
-
+#always_show_zot = true
 tile_show_threat_levels = trivial easy tough nasty
 
 tile_upstairs_col = green
@@ -36,6 +35,7 @@ tile_lava_col = #5f0a00
 #automagic_enable = true
 #automagic_fight = true
 #automagic_stop = 20
+#automagic_slot = a
 
 view_delay = 300
 hp_colour = 100:green, 99:lightgray, 75:yellow, 50:lightred, 25:red
@@ -45,6 +45,8 @@ sort_menus = true:equipped,identified,basename,art,ego,glowing,qualname,curse,ch
 #menu_colour += inventory:$equipped:.*equipped.*
 
 tile_map_scale = 1
+
+auto_hide_spells = true
 
 spell_slot ^= Apportation:+a
 spell_slot ^= Sublimation of Blood:+e
@@ -57,10 +59,10 @@ spell_slot ^= Necromutation:+nb
 spell_slot ^= Irradiate:+x
 spell_slot ^= Invisibility:+y
 spell_slot ^= Fire Storm:cfgvh
-spell_slot ^= Ozocubu's Refrigeration:cfgvh
+spell_slot ^= Ozocubu's Refrigeration:fcgvh
 spell_slot ^= Tornado:cfgvh
-spell_slot ^= Absolute Zero:cfgvh
-spell_slot ^= Shatter:cfgvh
+spell_slot ^= Absolute Zero:+v
+spell_slot ^= Shatter:hcfgv
 spell_slot ^= Iskenderun's Mystic Blast:cfgvh
 spell_slot ^= Iron Shot:cfghv
 spell_slot ^= Lehudib's Crystal Spear:cfghv
@@ -88,6 +90,8 @@ spell_slot ^= Summon Mana Viper:dgh
 spell_slot ^= Malign Gateway:dgh
 spell_slot ^= Borgnjor's Revivification:jk
 spell_slot ^= Death's Door:jk
+
+msg_condense_repeats = true
 
 more := force_more_message
 more += You have finished your manual of
@@ -134,7 +138,7 @@ more += (flayed ghost|greater mummy|mummy priest|fiend|tzitzimitl).*into view
 more += (tormentor|curse toe|curse skull|hell sentinel|hellion).*into view
 more += (lich|orb of fire|executioner|juggernaut|shrike).*into view
 more += (?-i:[A-Z]).* comes? into view
-more += Xom
+#more += Xom
 
 stop := runrest_stop_message
 stop += You feel yourself slow down
@@ -156,9 +160,12 @@ auto_exclude += ancient lich, death drake, hydra, ice statue, orb of fire, caust
 
 confirm_action += Potion Petition, Call Merchant, Bribe Branch, Heavenly Storm
 
+regex_search = true
+
 ae := autopickup_exceptions
 ae += <throwing net
-ae += <dart
+#ae += <dart
+ae += <curare-tipped dart
 ae += <javelin
 ae += <artefact
 ae ^= <immolation
