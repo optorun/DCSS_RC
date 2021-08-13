@@ -1,5 +1,3 @@
-include = CrawlCosplay.rc
-
 default_manual_training = true
 autofight_stop = 75
 autofight_caught = true
@@ -60,13 +58,12 @@ spell_slot ^= Irradiate:+x
 spell_slot ^= Invisibility:+y
 spell_slot ^= Fire Storm:cfgvh
 spell_slot ^= Ozocubu's Refrigeration:fcgvh
-spell_slot ^= Tornado:cfgvh
-spell_slot ^= Absolute Zero:+v
+spell_slot ^= Polar Vortex:cfgvh
 spell_slot ^= Shatter:hcfgv
 spell_slot ^= Iskenderun's Mystic Blast:cfgvh
-spell_slot ^= Iron Shot:cfghv
-spell_slot ^= Lehudib's Crystal Spear:cfghv
-spell_slot ^= Orb of Destruction:cfghv
+spell_slot ^= Iron Shot:gcfhv
+spell_slot ^= Lehudib's Crystal Spear:gcfhv
+spell_slot ^= Orb of Destruction:gcfhv
 spell_slot ^= Fireball:cfgvh
 spell_slot ^= Borgnjor's Vile Clutch:cfghv
 spell_slot ^= Ignition:cfghv
@@ -180,7 +177,6 @@ ae ^= <stone
 ae ^= <magical
 ae ^= <potions? of mutation
 ae ^= <potions? of lignification
-#ae += >wand of random effects
 
 # Skill menu at game start by rwbarton
 {
@@ -209,7 +205,7 @@ local function autopickup(it, name)
             return true
         elseif st ~= "body" and st ~= "shield" and (it.artefact or it.branded) then
             return true
-        end 
+        end
     end
     return nil
 end
