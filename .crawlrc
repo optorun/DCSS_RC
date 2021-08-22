@@ -12,6 +12,7 @@ show_more = false
 note_chat_messages = true
 #explore_wall_bias = 50
 #always_show_zot = true
+warn_hatches = true
 tile_show_threat_levels = trivial easy tough nasty
 
 tile_upstairs_col = green
@@ -210,4 +211,23 @@ local function autopickup(it, name)
     return nil
 end
 add_autopickup_func(autopickup)
+}
+
+## Use a random Felid tile among 10 available (once per run) (by u/EugeneJudo)
+{
+if you.race() == "Felid" then
+  if not c_persist.overwrite_tile or (you.turns() == 0) then
+    c_persist.overwrite_tile = "tile:felid_" .. tostring(crawl.random_range(1,10))
+  end
+  crawl.setopt("tile_player_tile = " .. c_persist.overwrite_tile)
+end
+}
+## Same for octopodes
+{
+if you.race() == "Octopode" then
+  if not c_persist.overwrite_tile or (you.turns() == 0) then
+    c_persist.overwrite_tile = "tile:octopode_" .. tostring(crawl.random_range(1,5))
+  end
+  crawl.setopt("tile_player_tile = " .. c_persist.overwrite_tile)
+end
 }
