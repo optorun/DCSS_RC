@@ -2,18 +2,29 @@ default_manual_training = true
 autofight_stop = 75
 autofight_caught = true
 #autofight_throw = true
+auto_hide_spells = true
 hp_warning = 50
 explore_delay = -1
 travel_delay = -1
 rest_delay = -1
+rest_wait_both = true
 explore_stop += greedy_items
 equip_unequip = true
 show_more = false
 note_chat_messages = true
+msg_condense_repeats = true
 #explore_wall_bias = 50
 #always_show_zot = true
 warn_hatches = true
 tile_show_threat_levels = trivial easy tough nasty
+view_delay = 300
+tile_map_scale = 1
+regex_search = true
+
+#automagic_enable = true
+#automagic_fight = true
+#automagic_stop = 20
+#automagic_slot = a
 
 tile_upstairs_col = green
 tile_branchstairs_col = red
@@ -31,21 +42,11 @@ tile_transporter_col = #ff5656
 tile_transporter_landing_col = #59ff89
 tile_lava_col = #5f0a00
 
-#automagic_enable = true
-#automagic_fight = true
-#automagic_stop = 20
-#automagic_slot = a
-
-view_delay = 300
 hp_colour = 100:green, 99:lightgray, 75:yellow, 50:lightred, 25:red
 mp_colour = 100:green, 99:lightgray, 75:yellow, 50:lightred, 25:red
 sort_menus = true:equipped,identified,basename,art,ego,glowing,qualname,curse,charged,slot
 #$equipped := orange
 #menu_colour += inventory:$equipped:.*equipped.*
-
-tile_map_scale = 1
-
-auto_hide_spells = true
 
 spell_slot ^= Apportation:+a
 spell_slot ^= Sublimation of Blood:+e
@@ -54,18 +55,22 @@ spell_slot ^= Passwall:+i
 spell_slot ^= Swiftness:+o
 spell_slot ^= Passage of Golubria:+p
 spell_slot ^= Statue Form:+nb
+spell_slot ^= Storm Form:+nb
 spell_slot ^= Necromutation:+nb
 spell_slot ^= Irradiate:+x
-spell_slot ^= Invisibility:+y
+spell_slot ^= Manifold Assault:cfgvh
 spell_slot ^= Fire Storm:cfgvh
 spell_slot ^= Ozocubu's Refrigeration:fcgvh
 spell_slot ^= Polar Vortex:cfgvh
+spell_slot ^= Chain Lightning:cfgvh
+spell_slot ^= Maxwell's Capacitive Coupling:+v
 spell_slot ^= Shatter:hcfgv
 spell_slot ^= Iskenderun's Mystic Blast:cfgvh
 spell_slot ^= Iron Shot:gcfhv
 spell_slot ^= Lehudib's Crystal Spear:gcfhv
 spell_slot ^= Orb of Destruction:gcfhv
 spell_slot ^= Fireball:cfgvh
+spell_slot ^= Starburst:cfvgh
 spell_slot ^= Borgnjor's Vile Clutch:cfghv
 spell_slot ^= Ignition:cfghv
 spell_slot ^= Ensorcelled Hibernation:+b
@@ -89,95 +94,30 @@ spell_slot ^= Malign Gateway:dgh
 spell_slot ^= Borgnjor's Revivification:jk
 spell_slot ^= Death's Door:jk
 
-msg_condense_repeats = true
+message_colour ^= magenta:distortion
 
 more := force_more_message
-more += You have finished your manual of
-more += The mighty Pandemonium lord .* resides here
-more += You fail to use your ability
-more += too confused
-more += Your surroundings flicker
-more += A sentinel's mark forms upon you
-more += enter a teleport trap
-more += Ouch! That really hurt!
-more += You are (blasted|electrocuted)
-more += You are confused
-more += You feel a surge of divine spite
-more += lose consciousness
-more += Space (warps|bends) around you
-more += watched by something
-more += flickers and vanishes!
-more += hell_effect:
-more += You feel yourself slow down
-more += You are starting to lose your buoyancy
-more += Your hearing returns
-more += Your transformation is almost over
-more += You have a feeling this form
-more += You feel yourself come back to life
-more += time is quickly running out
-more += life is in your own hands
-more += Your shroud falls apart
-more += You start to feel a little slower
-more += You feel less protected from missiles
-more += You have reached level
-more += You rejoin the land of the living
-more += Your scales start
-more += You feel monstrous
-more += Jiyva alters your body
-more += Strange energies course through your body
-more += ((floating|shining) eye|dream sheep|death drake).*into view
-more += (wretched star|apocalypse crab).*into view
-more += (entropy weaver|torpor snail).*into view
-more += (vault (warden|sentinel)|merfolk (avatar|siren)).*into view
-more += (guardian serpent|draconian shifter|convoker|scorcher|annihilator).*into view
-more += (orc sorcerer|priest|ogre mage|great orb of eyes|sphinx).*into view
-more += (basilisk|deep elf (sorcerer|demonologist|high priest|annihilator)).*into view
-more += (flayed ghost|greater mummy|mummy priest|fiend|tzitzimitl).*into view
-more += (tormentor|curse toe|curse skull|hell sentinel|hellion).*into view
-more += (lich|orb of fire|executioner|juggernaut|shrike).*into view
+more += You have finished your manual of, The mighty Pandemonium lord .* resides here, You fail to use your ability, too confused, Your surroundings flicker, A sentinel's mark forms upon you, enter a teleport trap, Ouch! That really hurt!, You are (blasted|electrocuted|confused), You feel a surge of divine spite, lose consciousness, Space (warps|bends) around you, watched by something, flickers and vanishes!, hell_effect:, You feel yourself slow down, You are starting to lose your buoyancy, Your hearing returns, Your transformation is almost over, You have a feeling this form, You feel yourself come back to life, time is quickly running out, life is in your own hands, You start to feel a little slower, You have reached level, You rejoin the land of the living, Your scales start, You feel monstrous, Jiyva alters your body, Strange energies course through your body, goes berserk, strangely unstable, suddenly seem different, A sourceless malevolence, cast into the abyss, is.*carrying a wand of
 more += (?-i:[A-Z]).* comes? into view
+more += ((floating|shining) eye|dream sheep|death drake|wretched star|apocalypse crab|entropy weaver|torpor snail|vault (warden|sentinel)|guardian serpent|draconian shifter|convoker|scorcher|annihilator|orc sorcerer|priest|ogre mage|great orb of eyes|sphinx|basilisk|deep elf (sorcerer|demonologist)|flayed ghost|royal mummy|mummy priest|fiend|tzitzimitl|tormentor|curse (toe|skull)|hell sentinel|hellion|lich|orb of fire|executioner|juggernaut|shrike|titanic|javelineer|thorn|hydra).*into view
 #more += Xom
 
 stop := runrest_stop_message
-stop += You feel yourself slow down
-stop += Your surroundings suddenly seem different
-stop += You stumble into a teleport trap!
-stop += You are starting to lose your buoyancy
-stop += Your hearing returns
-stop += Your transformation is almost over
-stop += back to life
-stop += time is quickly running out
-stop += life is in your own hands
-stop += is no longer charmed
+stop += You feel yourself slow down, You stumble into a teleport trap!, You are starting to lose your buoyancy, Your hearing returns, Your transformation is almost over, back to life, time is quickly running out, life is in your own hands, is no longer charmed, You (fall through|are sucked into) a shaft, An alarm trap emits a blaring wail
 
 runrest_ignore_poison = 3:30
 runrest_ignore_monster += butterfly:1
-rest_wait_both = true
 
-auto_exclude += ancient lich, death drake, hydra, ice statue, orb of fire, caustic shrike
+auto_exclude += lich, death drake, hydra, ice statue, orb of fire, caustic shrike, killer bee
 
 confirm_action += Potion Petition, Call Merchant, Bribe Branch, Heavenly Storm
 
-regex_search = true
-
 ae := autopickup_exceptions
-ae += <throwing net
-#ae += <dart
-ae += <curare-tipped dart
-ae += <javelin
-ae += <artefact
-ae ^= <immolation
-ae ^= <phantom mirror
-ae ^= <box
-ae ^= <lightning
-ae ^= <condenser
-ae ^= <tremor
-ae ^= <flood
-ae ^= <bullet
-ae ^= <stone
-ae ^= <magical
-ae ^= <potions? of mutation
-ae ^= <potions? of lignification
+ae ^= <throwing net, <curare-tipped dart, <javelin, <artefact, <immolation, <vulnerability, <phantom mirror, <box, <lightning, <condenser, <tremor, <flood, <magical, <potions? of mutation, <potions? of lignification, <ziggurat
+ae ^= >potions? of attraction
+#ae += <dart, <bullet, <stone
+
+drop_filter += noise, degeneration, attraction
 
 # Skill menu at game start by rwbarton
 {
@@ -223,11 +163,11 @@ if you.race() == "Felid" then
 end
 }
 ## Same for octopodes
-{
-if you.race() == "Octopode" then
-  if not c_persist.overwrite_tile or (you.turns() == 0) then
-    c_persist.overwrite_tile = "tile:octopode_" .. tostring(crawl.random_range(1,5))
-  end
-  crawl.setopt("tile_player_tile = " .. c_persist.overwrite_tile)
-end
-}
+#{
+#if you.race() == "Octopode" then
+#  if not c_persist.overwrite_tile or (you.turns() == 0) then
+#    c_persist.overwrite_tile = "tile:octopode_" .. tostring(crawl.random_range(1,5))
+#  end
+#  crawl.setopt("tile_player_tile = " .. c_persist.overwrite_tile)
+#end
+#}
