@@ -97,7 +97,7 @@ spell_slot ^= Death's Door:jk
 message_colour ^= magenta:distortion
 
 more := force_more_message
-more += You have finished your manual of, The mighty Pandemonium lord .* resides here, You fail to use your ability, too confused, Your surroundings flicker, A sentinel's mark forms upon you, enter a teleport trap, Ouch! That really hurt!, You are (blasted|electrocuted|confused), You feel a surge of divine spite, lose consciousness, Space (warps|bends) around you, watched by something, flickers and vanishes!, hell_effect:, You feel yourself slow down, You are starting to lose your buoyancy, Your hearing returns, Your transformation is almost over, You have a feeling this form, You feel yourself come back to life, time is quickly running out, life is in your own hands, You start to feel a little slower, You have reached level, You rejoin the land of the living, Your scales start, You feel monstrous, Jiyva alters your body, Strange energies course through your body, goes berserk, strangely unstable, suddenly seem different, A sourceless malevolence, cast into the abyss, is.*carrying a wand of
+more += You have finished your manual of, The mighty Pandemonium lord .* resides here, You fail to use your ability, too confused, Your surroundings flicker, A sentinel's mark forms upon you, enter a teleport trap, Ouch! That really hurt!, You are (blasted|electrocuted|confused), You feel a surge of divine spite, lose consciousness, Space (warps|bends) around you, watched by something, flickers and vanishes!, hell_effect:, You feel yourself slow down, You are starting to lose your buoyancy, Your hearing returns, Your transformation is almost over, You have a feeling this form, You feel yourself come back to life, time is quickly running out, life is in your own hands, You start to feel a little slower, You have reached level, You rejoin the land of the living, Your scales start, You feel monstrous, Jiyva alters your body, Strange energies course through your body, goes berserk, strangely unstable, suddenly seem different, A sourceless malevolence, cast into the abyss, is.*carrying a wand of, Ashenzari invtes you to partake of a vision and a curse of
 more += (?-i:[A-Z]).* comes? into view
 more += ((floating|shining) eye|dream sheep|death drake|wretched star|apocalypse crab|entropy weaver|torpor snail|vault (warden|sentinel)|guardian serpent|draconian shifter|convoker|scorcher|annihilator|orc sorcerer|priest|ogre mage|great orb of eyes|sphinx|basilisk|deep elf (sorcerer|demonologist)|flayed ghost|royal mummy|mummy priest|fiend|tzitzimitl|tormentor|curse (toe|skull)|hell sentinel|hellion|lich|orb of fire|executioner|juggernaut|shrike|titanic|javelineer|thorn|hydra).*into view
 #more += Xom
@@ -113,7 +113,7 @@ auto_exclude += lich, death drake, hydra, ice statue, orb of fire, caustic shrik
 confirm_action += Potion Petition, Call Merchant, Bribe Branch, Heavenly Storm
 
 ae := autopickup_exceptions
-ae ^= <throwing net, <curare-tipped dart, <javelin, <artefact, <immolation, <vulnerability, <phantom mirror, <box, <lightning, <condenser, <tremor, <flood, <magical, <potions? of mutation, <potions? of lignification, <ziggurat
+ae ^= <throwing net, <curare-tipped dart, <javelin, <artefact, <immolation, <vulnerability, <phantom mirror, <box, <lightning, <condenser, <tremor, <flood, <magical, <potions? of mutation, <potions? of lignification, <ziggurat, <dispersal
 ae ^= >potions? of attraction
 #ae += <dart, <bullet, <stone
 
